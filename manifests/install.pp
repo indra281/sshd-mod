@@ -7,8 +7,9 @@ ensure => installed,
 
 file { '/etc/ssh/sshd_config':
 ensure => present,
+source => 'puppet:///module/ssh/tomcat.conf',
 mode => $::ssh::mode,
-notifiy => Service['sshd']
+notify => Service['sshd']
 
 }
 

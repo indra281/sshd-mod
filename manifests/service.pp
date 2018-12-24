@@ -3,7 +3,7 @@ class ssh::service inherits ssh {
 
 service { $::ssh::service_name:
 
-ensure => runnig,
+ensure => $::ssh::service_status,
 enable => true,
 
 }
