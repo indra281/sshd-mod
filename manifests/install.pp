@@ -1,11 +1,15 @@
-class tomcat::install inherits tomcat {
+class ssh::install inherits ssh {
 
-package { $::tomcat::packages:
-
-ensure => present,
-
+package { $::ssh::packages:
+ensure => installed,
 
 }
 
+file { '/etc/ssh/sshd_config':
+ensure => present,
+mode => $::ssh::mode,
+notifiy => Service['sshd']
+
+}
 
 }

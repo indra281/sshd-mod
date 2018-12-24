@@ -1,11 +1,9 @@
-class tomcat::variable {
+class ssh::variable {
 
-$user = 'tomcat'
-$config_path = '/etc/tomcat/tomcat.conf'
 $mode = '0777'
-$service_name = 'tomcat'
-$service_status = 'running'
-$packages = ['tomcat', 'tomcat-webapps']
+$owner = 'root'
+$packages = 'openssh-server'
+$service_name = 'sshd'
 
 
 }
